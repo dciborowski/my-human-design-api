@@ -1,10 +1,7 @@
-index.js
-
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 10000;
 
-// Simple API endpoint
 app.get('/chart', (req, res) => {
     const { date, time, location } = req.query;
 
@@ -12,7 +9,6 @@ app.get('/chart', (req, res) => {
         return res.status(400).json({ error: "Please provide date, time, and location as query params." });
     }
 
-    // Mock chart data
     const chart = {
         date,
         time,
